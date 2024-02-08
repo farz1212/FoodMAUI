@@ -1,4 +1,7 @@
 ﻿using CommunityToolkit.Maui;
+using FoodMAUI.Services;
+using FoodMAUI.ViewModels;
+using FoodMAUI.Views;
 using Microsoft.Extensions.Logging;
 
 namespace FoodMAUI;
@@ -20,8 +23,15 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-
+		AddPizzaServices(builder.Services);
 		return builder.Build();
+	}
+
+	private static IServiceCollection AddPizzaServices(IServiceCollection services)
+	{
+		services.AddSingleton<PizzaService>();
+        services.AddSingletonWithShellRoute<HomePage, HomeViewModel>(nameof(HomePage));
+        return services;
 	}
 }
 

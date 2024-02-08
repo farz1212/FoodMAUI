@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FoodMAUI.ViewModels"
+             xmlns:m="clr-namespace:FoodMAUI.Models"
+             x:DataType="vm:HomeViewModel"
              x:Class="FoodMAUI.Views.HomePage"
              Padding="10"
              Title="Food World">
     <ScrollView>
-        <VerticalStackLayout>
+        <VerticalStackLayout Spacing="10">
             <Frame BackgroundColor="Goldenrod"
                    CornerRadius="15"
                    Padding="15">
@@ -31,9 +34,80 @@
                 </Grid>
 
             </Frame>
+            <Frame CornerRadius="15"
+                   Padding="10"
+                   BorderColor="Goldenrod">
+                <Label Text="Search here..."
+                       TextColor="Goldenrod"/>
 
+            </Frame>
+            <BoxView HeightRequest="2"
+                     BackgroundColor="DarkGoldenrod"/>
+
+            <Grid ColumnDefinitions="*,*">
+                <Label Text="Popular Items"
+                       FontSize="25"/>
+                <Label Grid.Column="1"
+                       Text="View all"
+                       HorizontalOptions="End"
+                       VerticalOptions="Center"
+                       TextDecorations="Underline"/>
+            </Grid>
+
+            <FlexLayout BindableLayout.ItemsSource="{Binding Pizzas}"
+                        Wrap="Wrap">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="m:PizzaModel">
+                        <Frame FlexLayout.Basis="50%"
+                               BackgroundColor="PaleGoldenrod"
+                               Padding="10,0"
+                               Margin="3">
+                            <Grid RowDefinitions="150, Auto, Auto, Auto, Auto"
+                                  RowSpacing="5">
+                                <Image Source="{Binding Image}"
+                                       Margin="5,0"/>
+
+                                <Label Grid.Row="1"
+                                       FontSize="20"
+                                       Text="{Binding Name}"
+                                       HorizontalOptions="Center"/>
+                                <Grid Grid.Row="2" ColumnDefinitions="*,*">
+                                    <Label Text="{Binding Price, StringFormat='${0:N2}'}"
+                                           FontAttributes="Bold"/>
+
+                                    <Frame Grid.Column="1"
+                                           CornerRadius="10"
+                                           Padding="1">
+                                        <HorizontalStackLayout BackgroundColor="white"
+                                                               HorizontalOptions="Center">
+
+                                            <Image Source="star.png" HeightRequest="15"/>
+                                            <Image Source="star.png" HeightRequest="15"/>
+                                            <Image Source="star.png" HeightRequest="15"/>
+                                            <Image Source="star.png" HeightRequest="15"/>
+
+                                        </HorizontalStackLayout>
+                                    </Frame>
+                                </Grid>
+                                <Button Grid.Row="3"
+                                        CornerRadius="15"
+                                        Text="View More"
+                                        FontSize="16"
+                                        TextColor="Black"
+                                        BackgroundColor="Goldenrod"/>
+
+                            </Grid>
+
+
+                        </Frame>
+
+                    </DataTemplate>
+
+                </BindableLayout.ItemTemplate>
+
+            </FlexLayout>
 
         </VerticalStackLayout>
-        
+
     </ScrollView>
 </ContentPage>

@@ -2,8 +2,10 @@
 
 public partial class HomePage : ContentPage
 {
-	public HomePage()
+	private readonly HomeViewModel _homeViewModel;
+	public HomePage(HomeViewModel homeViewModel)
 	{
 		InitializeComponent();
+		BindingContext = _homeViewModel = homeViewModel;
 	}
 }
