@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net8.0-android;net8.0-ios</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
 
@@ -31,11 +30,7 @@
 		<ApplicationVersion>1</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
-		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
@@ -63,6 +58,52 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.6" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.6" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="7.0.1" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Resources\Images\star.svg" />
+	  <None Remove="Resources\Images\cake.svg" />
+	  <None Remove="Resources\Images\fish.svg" />
+	  <None Remove="Resources\Images\pancake.svg" />
+	  <None Remove="Resources\Images\donut.svg" />
+	  <None Remove="Resources\Images\salad.svg" />
+	  <None Remove="Resources\Images\spaghetti.svg" />
+	  <None Remove="Resources\Images\pie.svg" />
+	  <None Remove="Resources\Images\rice.svg" />
+	  <None Remove="Resources\Images\sandwich.svg" />
+	  <None Remove="Resources\Images\fries.svg" />
+	  <None Remove="Resources\Images\wrap.svg" />
+	  <None Remove="Resources\Images\hotdog.svg" />
+	  <None Remove="Resources\Images\chicken.svg" />
+	  <None Remove="Resources\Images\burger.svg" />
+	  <None Remove="Resources\Images\pizza.svg" />
+	  <None Remove="Views\" />
+	  <None Remove="ViewModels\" />
+	  <None Remove="Models\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\star.svg" />
+	  <BundleResource Include="Resources\Images\cake.svg" />
+	  <BundleResource Include="Resources\Images\fish.svg" />
+	  <BundleResource Include="Resources\Images\pancake.svg" />
+	  <BundleResource Include="Resources\Images\donut.svg" />
+	  <BundleResource Include="Resources\Images\salad.svg" />
+	  <BundleResource Include="Resources\Images\spaghetti.svg" />
+	  <BundleResource Include="Resources\Images\pie.svg" />
+	  <BundleResource Include="Resources\Images\rice.svg" />
+	  <BundleResource Include="Resources\Images\sandwich.svg" />
+	  <BundleResource Include="Resources\Images\fries.svg" />
+	  <BundleResource Include="Resources\Images\wrap.svg" />
+	  <BundleResource Include="Resources\Images\hotdog.svg" />
+	  <BundleResource Include="Resources\Images\chicken.svg" />
+	  <BundleResource Include="Resources\Images\burger.svg" />
+	  <BundleResource Include="Resources\Images\pizza.svg" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Views\" />
+	  <Folder Include="ViewModels\" />
+	  <Folder Include="Models\" />
+	</ItemGroup>
 </Project>

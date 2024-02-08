@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="DarkGoldenrod"
+             x:Class="FoodMAUI.Views.MainPage">
+
+    <Grid RowDefinitions="Auto, *, Auto"
+          Padding="15,25">
+        <Label Text="Food World"
+               FontSize="50"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+        <Image Grid.Row="1"
+               Source="pizza.png"
+               Margin="25,0"/>
+        <VerticalStackLayout Grid.Row="2"
+                             Spacing="15">
+            <Label Text="The Taste of Greatness"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+            <Label Text="The best food from around the world!"
+                   FontSize="18"
+                   HorizontalOptions="Center"/>
+            <Button Text="Get Started"
+                    Pressed="Button_Pressed"
+                    CornerRadius="20"
+                    FontSize="20"
+                    BackgroundColor="Goldenrod"/>
+
+        </VerticalStackLayout>
+
+    </Grid>
+
+</ContentPage>
+

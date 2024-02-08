@@ -3,14 +3,19 @@
     x:Class="FoodMAUI.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:FoodMAUI"
+    xmlns:views="clr-namespace:FoodMAUI.Views"
     Shell.FlyoutBehavior="Disabled"
-    Title="FoodMAUI">
+    BackgroundColor="DarkGoldenrod">
+
+    <ShellContent
+        Title=""
+        ContentTemplate="{DataTemplate views:MainPage}"
+        Route="MainPage" />
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate views:HomePage}"
+        Route="HomePage" />
 
 </Shell>
 

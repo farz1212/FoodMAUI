@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodMAUI.Views.HomePage"
+             Padding="10"
+             Title="Food World">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Frame BackgroundColor="Goldenrod"
+                   CornerRadius="15"
+                   Padding="15">
+                <Grid ColumnDefinitions="*,*"
+                      RowDefinitions="*,*,*">
+                    <Label Text="Best Offer"
+                           FontSize="25"
+                           VerticalOptions="Center"/>
+                    <Label Grid.Row="1"
+                           Text="Grab this amazing offer before it expires!"/>
+                    <Button Grid.Row="2"
+                            Text="Get It Now"
+                            TextColor="Black"
+                            FontSize="18"
+                            HeightRequest="44"
+                            CornerRadius="15"
+                            BackgroundColor="PaleGoldenrod"/>
+                    <Image Grid.Column="1"
+                           Grid.RowSpan="3"
+                           Margin="0,10"
+                           Source="burger.png"/>
+
+                </Grid>
+
+            </Frame>
+
+
+        </VerticalStackLayout>
+        
+    </ScrollView>
+</ContentPage>
