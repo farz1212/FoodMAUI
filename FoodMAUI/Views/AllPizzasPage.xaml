@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FoodMAUI.ViewModels"
+             xmlns:m="clr-namespace:FoodMAUI.Models"
+             x:DataType="vm:AllPizzasViewModel"
+             x:Class="FoodMAUI.Views.AllPizzasPage"
+             Title="All Items">
+    <ContentPage.Triggers>
+        <DataTrigger TargetType="ContentPage"
+                     Binding="{Binding FromSearch}"
+                     Value="True">
+            <Setter Property="Title" Value="Search For Items"/>
+
+        </DataTrigger>
+    </ContentPage.Triggers>
+
+    <Grid RowDefinitions="Auto,*">
+        <SearchBar x:Name="SearchBar" Placeholder="Search for items..."
+                   PlaceholderColor="Goldenrod"
+                   CancelButtonColor="Red"
+                   TextColor="DarkGoldenrod"
+                   BackgroundColor="White"
+                   TextChanged="SearchBar_TextChanged"
+                   SearchCommand="{Binding SearchPizzasCommand}"
+                   SearchCommandParameter="{Binding Source={x:Reference SearchBar}, Path=Text}"/>
+
+        <ScrollView Grid.Row="1"
+                    Margin="5">
+            <VerticalStackLayout>
+                <CollectionView ItemsSource="{Binding Pizzas}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical"
+                                           ItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="m:PizzaModel">
+                            <Frame BackgroundColor="PaleGoldenrod">
+                                <Grid ColumnDefinitions="Auto,*"
+                                      ColumnSpacing="10">
+                                    <Image Source="{Binding Image}"
+                                           HeightRequest="150"
+                                           WidthRequest="150"/>
+                                    <VerticalStackLayout Grid.Column="1"
+                                                         VerticalOptions="Center"
+                                                         Spacing="15">
+                                        <Label Text="{Binding Name}"
+                                               FontSize="30"/>
+                                        <Grid ColumnDefinitions="*,*">
+                                            
+                                            <Frame CornerRadius="10"
+                                                   Padding="1">
+                                                <HorizontalStackLayout BackgroundColor="white"
+                                                               HorizontalOptions="Center">
+
+                                                    <Image Source="star.png" HeightRequest="15"/>
+                                                    <Image Source="star.png" HeightRequest="15"/>
+                                                    <Image Source="star.png" HeightRequest="15"/>
+                                                    <Image Source="star.png" HeightRequest="15"/>
+
+                                                </HorizontalStackLayout>
+                                            </Frame>
+                                            <Label Grid.Column="1"
+                                                   HorizontalOptions="End"
+                                                   Text="{Binding Price, StringFormat='${0:N2}'}"
+                                                   FontSize="16"
+                                                   FontAttributes="Bold"/>
+
+                                        </Grid>
+                                        <Button Text="View More"
+                                                TextColor="Black"
+                                                CornerRadius="15"
+                                                FontSize="16"
+                                                FontAttributes="Bold"
+                                                BackgroundColor="Goldenrod"/>
+
+                                    </VerticalStackLayout>
+
+                                </Grid>
+
+                            </Frame>
+
+                        </DataTemplate>
+
+                    </CollectionView.ItemTemplate>
+                    <CollectionView.EmptyView>
+                        <VerticalStackLayout HorizontalOptions="Center">
+                            <Label Text="No Food Item Found"
+                                   FontSize="25"
+                                   TextColor="Gray"
+                                   HorizontalOptions="Center"
+                                   Margin="0,50"/>
+                        </VerticalStackLayout>
+
+                    </CollectionView.EmptyView>
+                </CollectionView>
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+        <ActivityIndicator Grid.RowSpan="2"
+                           IsRunning="{Binding Searching}"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Color="DarkGoldenrod"/>
+    </Grid>
+</ContentPage>

@@ -9,7 +9,7 @@ public partial class MainPage : ContentPage
 
     async void Button_Pressed(System.Object sender, System.EventArgs e)
     {
-		await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+		await Shell.Current.GoToAsync(nameof(HomePage));
     }
 }
 

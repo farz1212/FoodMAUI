@@ -39,6 +39,11 @@
                    BorderColor="Goldenrod">
                 <Label Text="Search here..."
                        TextColor="Goldenrod"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoToAllPizzasPageCommand}"
+                                          CommandParameter="{x:Boolean true}"/>
+
+                </Frame.GestureRecognizers>
 
             </Frame>
             <BoxView HeightRequest="2"
@@ -51,7 +56,14 @@
                        Text="View all"
                        HorizontalOptions="End"
                        VerticalOptions="Center"
-                       TextDecorations="Underline"/>
+                       TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToAllPizzasPageCommand}"
+                                              CommandParameter="{x:Boolean false}"/>
+
+                    </Label.GestureRecognizers>
+
+                </Label>
             </Grid>
 
             <FlexLayout BindableLayout.ItemsSource="{Binding Pizzas}"

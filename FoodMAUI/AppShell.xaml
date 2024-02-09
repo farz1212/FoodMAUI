@@ -13,7 +13,7 @@
         Route="MainPage" />
 
     <ShellContent
-        Title="Home"
+        Title=""
         ContentTemplate="{DataTemplate views:HomePage}"
         Route="HomePage" />
 

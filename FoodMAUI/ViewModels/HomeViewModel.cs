@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using CommunityToolkit.Mvvm.ComponentModel;
-using FoodMAUI.Models;
-using FoodMAUI.Services;
-
-namespace FoodMAUI.ViewModels
+﻿namespace FoodMAUI.ViewModels
 {
 	public partial class HomeViewModel : ObservableObject
 	{
@@ -16,6 +10,17 @@ namespace FoodMAUI.ViewModels
 		}
 
 		public ObservableCollection<PizzaModel> Pizzas { get; set; }
+
+		[RelayCommand]
+		public async Task GoToAllPizzasPage(bool fromSearch = false)
+		{
+			var parameters = new Dictionary<string, object>
+			{
+				[nameof(AllPizzasViewModel.FromSearch)] = fromSearch
+
+			};
+			await Shell.Current.GoToAsync(nameof(AllPizzasPage), animate: true, parameters);
+		}
 
 	}
 }
