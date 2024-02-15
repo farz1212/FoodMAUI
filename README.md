@@ -1,5 +1,7 @@
 # FoodMAUI
 ### A simple Food application that shows multiple items along with search functionality.
+### - Made in .Net Maui (Platforms IOS || Android)
+
 ### Future Update - Addition of shopping cart functionality and view.
 ## Landing Page
 
