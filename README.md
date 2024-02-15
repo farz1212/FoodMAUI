@@ -12,10 +12,10 @@
 ## Search Page
 
 <img src="https://github.com/farz1212/FoodMAUI/assets/32451610/24aaecb6-1552-47ac-adde-57bb6ece2adc" width = "200" height = "400"/><br/>
-## FoodMAUI
+## Search Result Page
 
 <img src="https://github.com/farz1212/FoodMAUI/assets/32451610/2473c741-481c-476d-b635-65159cd207e1" width = "200" height = "400"/><br/>
-## FoodMAUI
+## Loading View
 
 <img src="https://github.com/farz1212/FoodMAUI/assets/32451610/f1f5a4c2-4c5f-44eb-9da4-62c3b39cd5dc" width = "200" height = "400"/><br/>
 
