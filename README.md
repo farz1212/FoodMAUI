@@ -1,4 +1,6 @@
 # FoodMAUI
+### A simple Food application that shows multiple items along with search functionality.
+## Future Update - Addition of shopping cart functionality and view.
 ## Landing Page
 
 <img src="https://github.com/farz1212/FoodMAUI/assets/32451610/695a3abb-fdd5-43c7-9163-be49118ddc4c" width = "200" height = "400"/><br/>
