@@ -1,8 +1,9 @@
 # FoodMAUI
-# Landing Page
+## Landing Page
 
 <img src="https://github.com/farz1212/FoodMAUI/assets/32451610/695a3abb-fdd5-43c7-9163-be49118ddc4c" width = "200" height = "400"/><br/>
-# Best Offer Page
+
+## Best Offer Page
 
 <img src="https://github.com/farz1212/FoodMAUI/assets/32451610/54485a40-8b43-4351-a504-af858b0181de" width = "200" height = "400"/><br/>
 # Popular Items Page
