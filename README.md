@@ -1,5 +1,5 @@
 # FoodMAUI
-<img src="https://github.com/farz1212/FoodMAUI/assets/32451610/695a3abb-fdd5-43c7-9163-be49118ddc4c" width = "100" height = "200">
+<img src="https://github.com/farz1212/FoodMAUI/assets/32451610/695a3abb-fdd5-43c7-9163-be49118ddc4c" width = "200" height = "400">
 ![Simulator Screenshot - iPhone 15 Pro - 2024-02-14 at 20 23 28](https://github.com/farz1212/FoodMAUI/assets/32451610/54485a40-8b43-4351-a504-af858b0181de)
 ![Simulator Screenshot - iPhone 15 Pro - 2024-02-14 at 20 23 33](https://github.com/farz1212/FoodMAUI/assets/32451610/3085a854-eedf-4179-8201-01cbbb92c2b2)
 ![Simulator Screenshot - iPhone 15 Pro - 2024-02-14 at 20 23 44](https://github.com/farz1212/FoodMAUI/assets/32451610/24aaecb6-1552-47ac-adde-57bb6ece2adc)
